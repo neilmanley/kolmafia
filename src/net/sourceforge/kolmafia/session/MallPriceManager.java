@@ -145,7 +145,7 @@ public abstract class MallPriceManager {
   // Mr. Accessory) in order to snatch up an erroneous mispriced item -
   // mall_price() returns the price you'd pay for the Nth item of the
   // sort you could buy. In particular, the 5th cheapest.
-  public static int NTH_CHEAPEST_COUNT = 5;
+  public static int NTH_CHEAPEST_COUNT = 1;
 
   // How many stores to request results for in a mall search. We'd like enough to find at least
   // NTH_CHEAPEST_COUNT results. Stores frequently have more than one of an item for sale, but
