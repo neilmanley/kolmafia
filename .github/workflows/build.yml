@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   bin:
-    if: github.repository == 'kolmafia/kolmafia'
+    if: github.repository == 'neilmanley/kolmafia'
     name: Build Binaries
     runs-on: ${{ matrix.os }}
     strategy:
