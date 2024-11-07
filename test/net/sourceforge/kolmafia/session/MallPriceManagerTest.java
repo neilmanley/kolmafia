@@ -262,7 +262,7 @@ public class MallPriceManagerTest {
       addSearchResults(item, results);
 
       // Get mall price for buying from 1 to 15 of the item.
-      assertEquals(500, MallPriceManager.getMallPrice(item.getInstance(1)));
+      assertEquals(100, MallPriceManager.getMallPrice(item.getInstance(1)));
       assertEquals(1000, MallPriceManager.getMallPrice(item.getInstance(2)));
       assertEquals(1500, MallPriceManager.getMallPrice(item.getInstance(3)));
       assertEquals(2000, MallPriceManager.getMallPrice(item.getInstance(4)));
@@ -326,7 +326,7 @@ public class MallPriceManagerTest {
         MallPurchaseRequest.addForbiddenStore(12);
         MallPurchaseRequest.addDisabledStore(14);
 
-        assertEquals(1000, MallPriceManager.getMallPrice(item.getInstance(1)));
+        assertEquals(100, MallPriceManager.getMallPrice(item.getInstance(1)));
         assertEquals(2000, MallPriceManager.getMallPrice(item.getInstance(2)));
         assertEquals(3000, MallPriceManager.getMallPrice(item.getInstance(3)));
         assertEquals(4000, MallPriceManager.getMallPrice(item.getInstance(4)));
@@ -366,7 +366,7 @@ public class MallPriceManagerTest {
 
       // This item is a NPC item available for the 5th cheapest price
       long mallPrice = MallPriceManager.getMallPrice(item);
-      assertEquals(mallPrice, 400);
+      assertEquals(mallPrice, 250);
     }
   }
 
@@ -400,7 +400,7 @@ public class MallPriceManagerTest {
 
       // Find the fifth cheapest price
       long mallPrice = MallPriceManager.getMallPrice(item);
-      assertEquals(mallPrice, 400);
+      assertEquals(mallPrice, 250);
 
       // Flush the first shop's PurchaseRequest
       MallPriceManager.flushCache(itemId, shopId);
@@ -528,7 +528,7 @@ public class MallPriceManagerTest {
 
       // Verify that we have a saved "5th lowest" mall price
       long price = MallPriceManager.getMallPrice(item);
-      assertEquals(500, price);
+      assertEquals(300, price);
 
       // Flush the PurchaseRequests for this item
       MallPriceManager.flushCache(itemId);
